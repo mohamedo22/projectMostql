@@ -1,0 +1,67 @@
+<!-- imageditor/templates/imageditor/result.html -->
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .container {
+                width: 80%;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            h1 {
+                color: #e60000;
+                text-align: center;
+            }
+            
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            input[type="text"] {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            
+            button {
+                padding: 10px 20px;
+                background-color: #e60000;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            
+            button:hover {
+                background-color: #cc0000;
+            }
+            
+            img {
+                display: block;
+                margin: 20px auto;
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <h1>Result</h1>
+        <img src="data:image/jpeg;base64,{{ image }}" alt="Result Image">
+        <form method="get" action="{% url 'download_pdf' %}">
+            <button type="submit">Download as PDF</button>
+        </form>
+    </div>
+</body>
+</html>
